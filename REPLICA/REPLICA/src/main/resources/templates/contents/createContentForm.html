@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+  <form action="/contents/new" method="post">
+    <div class="form-group">
+      <label for="music">노래 제목</label>
+      <input type="text" id="music" name="music" placeholder="노래 제목">
+      <label for="artist">가수</label>
+      <input type="text" id="artist" name="artist" placeholder="가수">
+      <label for="place">장소</label>
+      <input type="text" id="place" name="place" placeholder="장소">
+      <label for="date">날짜</label>
+      <input type="text" id="date" name="date" placeholder="날짜">
+      <label for="description">설명</label>
+      <input type="text" id="description" name="description" placeholder="설명">
+    </div>
+    <button type="submit">등록</button>
+  </form>
+</div> <!-- /container -->
+</body>
+</html>
