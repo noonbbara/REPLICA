@@ -13,18 +13,18 @@ public class JpaContentRepository implements ContentRepository {
     }
 
     private final EntityManager em;
-    @Override
+
     public Content save(Content content) {
         em.persist(content);
         return content;
     }
 
-    @Override
+
     public Optional<Content> findById(Long id) {
         Content content = em.find(Content.class, id);
         return Optional.ofNullable(content);
     }
-    @Override
+
     public Optional<Content> findByMusic(String music) {
         List<Content> result = em.createQuery("select c from Content c where c.music = :music", Content.class)
                 .setParameter("music", music)
@@ -32,7 +32,7 @@ public class JpaContentRepository implements ContentRepository {
         return result.stream().findAny();
     }
 
-    @Override
+
     public Optional<Content> findByArtist(String artist) {
         List<Content> result = em.createQuery("select c from Content c where c.artist = :artist", Content.class)
                 .setParameter("artist", artist)
@@ -40,7 +40,7 @@ public class JpaContentRepository implements ContentRepository {
         return result.stream().findAny();
     }
 
-    @Override
+
     public Optional<Content> findByPlace(String place) {
         List<Content> result = em.createQuery("select c from Content c where c.place = :place", Content.class)
                 .setParameter("place", place)
@@ -48,7 +48,7 @@ public class JpaContentRepository implements ContentRepository {
         return result.stream().findAny();
     }
 
-    @Override
+
     public List<Content> findAll() {
         List<Content> result = em.createQuery("select c from Content c", Content.class)
                 .getResultList();

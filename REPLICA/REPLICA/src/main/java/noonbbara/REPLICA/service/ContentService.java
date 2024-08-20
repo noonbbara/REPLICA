@@ -7,10 +7,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-@Service
+
 @Transactional
 public class ContentService {
-    private final ContentRepository contentRepository = new MemoryContentRepository();
+    private ContentRepository contentRepository = new MemoryContentRepository();
+
+    public ContentService(ContentRepository contentRepository) {
+        this.contentRepository = contentRepository;
+    }
+
     // 컨텐츠 작성
     public Long write(Content content){
         contentRepository.save(content);
