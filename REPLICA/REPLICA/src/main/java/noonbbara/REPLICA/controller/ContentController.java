@@ -40,6 +40,6 @@ public class ContentController {
     public String list(Model model){
         List<Content> contents = contentService.findContents();
         model.addAttribute("contents", contents);
-        return "contents/contentList";
+        return "main";
     }
 }
