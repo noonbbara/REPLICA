@@ -1,21 +1,31 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Main</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
 <body>
+<h1><a href="/">REPLICA</a></h1>
 <div class="container">
   <form action="/contents/new" method="post">
-    <div class="form-group">
-      <label for="music">노래 제목</label>
-      <input type="text" id="music" name="music" placeholder="노래 제목">
-      <label for="artist">가수</label>
-      <input type="text" id="artist" name="artist" placeholder="가수">
-      <label for="place">장소</label>
-      <input type="text" id="place" name="place" placeholder="장소">
-      <label for="date">날짜</label>
-      <input type="text" id="date" name="date" placeholder="날짜">
-      <label for="description">설명</label>
-      <input type="text" id="description" name="description" placeholder="설명">
+    <div class="card">
+      <div class="card-front" style="display: flex; flex-direction: column; align-items: center;">
+        <p style="text-align : center; font-size : 70%">REPRODUCTION OF FAMILIAR<br>MUSICS AND MOMENTS OF VARYING<br>LOCATIONS AND PERIODS</p>
+        <hr class="divider" style="align-self: stretch;">
+<!--        <label for="music"><strong>노래 제목</strong></label>-->
+        <input type="text" id="music" name="music" placeholder="노래 제목"><br>
+<!--        <label for="artist"><strong>가수</strong></label>-->
+        <input type="text" id="artist" name="artist" placeholder="가수"><br>
+<!--        <label for="place"><strong>장소</strong></label>-->
+        <input type="text" id="place" name="place" placeholder="장소"><br>
+<!--        <label for="date"><strong>날짜</strong></label>-->
+        <input type="text" id="date" name="date" placeholder="날짜"><br>
+<!--        <label for="description"><strong>설명</strong></label>-->
+        <textarea id="description" name="description" placeholder="설명" rows="5" cols="50"></textarea><br>
+        <button type="submit">등록</button>
+      </div>
     </div>
-    <button type="submit">등록</button>
   </form>
 </div> <!-- /container -->
 </body>
